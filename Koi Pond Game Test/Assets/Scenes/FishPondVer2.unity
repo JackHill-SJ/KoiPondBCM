@@ -2587,17 +2587,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 3e348bad27344c54c9ac71035bc71b45,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.370566
+      value: -4.37
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3e348bad27344c54c9ac71035bc71b45,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.868
+      value: -3.8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3e348bad27344c54c9ac71035bc71b45,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.6295798
+      value: -0.62
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3e348bad27344c54c9ac71035bc71b45,
         type: 3}
@@ -3046,7 +3046,7 @@ PrefabInstance:
     - target: {fileID: 9004261771637869939, guid: 0c50c563e4e4fca45be285df7c83c132,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.5
+      value: -3.4
       objectReference: {fileID: 0}
     - target: {fileID: 9004261771637869939, guid: 0c50c563e4e4fca45be285df7c83c132,
         type: 3}
@@ -3128,5 +3128,10 @@ PrefabInstance:
       propertyPath: wayPoints.Array.data[5]
       value: 
       objectReference: {fileID: 987989471}
+    - target: {fileID: 4147573987070979987, guid: 0c50c563e4e4fca45be285df7c83c132,
+        type: 3}
+      propertyPath: slowdownSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c50c563e4e4fca45be285df7c83c132, type: 3}

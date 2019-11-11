@@ -35,9 +35,9 @@ public class FishAI : MonoBehaviour
 
     public Rigidbody RB;
 
-    //public float slowdownSpeed = 0.1f;
+    public float slowdownSpeed = 0.1f;
 
-    //public bool hasInteracted;
+    public bool hasInteracted;
 
 
     // Use this for initialization
@@ -82,12 +82,12 @@ public class FishAI : MonoBehaviour
         {
             //make sure we rotate the fish to face it's waypoint
             //RotateFish(waypoint, moveSpeed);
-            /*if (hasInteracted == true)
+            if (hasInteracted == true)
             {
                 wayPointInd = Random.Range(0, wayPoints.Length);
-                moveSpeed *= 100;
+                moveSpeed *= 200;
                 hasInteracted = false;
-            }*/
+            }
             fishAgent.speed = moveSpeed;
             if (Vector3.Distance(this.transform.position, wayPoints[wayPointInd].transform.position) >= 2)
             {
@@ -101,8 +101,8 @@ public class FishAI : MonoBehaviour
         
         if(playerCapsule.playerInteract == true)
         {
-            //moveSpeed *= slowdownSpeed;
-            //hasInteracted = true;
+            moveSpeed *= slowdownSpeed;
+            hasInteracted = true;
         }
     }
     

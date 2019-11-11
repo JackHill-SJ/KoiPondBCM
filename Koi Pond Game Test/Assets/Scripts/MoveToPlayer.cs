@@ -11,6 +11,7 @@ public class MoveToPlayer : MonoBehaviour
     private Vector3 smoothVelocity = Vector3.zero;
     private bool underPlayer;
 
+
     public bool playerInteract;
 
     private void Awake()
