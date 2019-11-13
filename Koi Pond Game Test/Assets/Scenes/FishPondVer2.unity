@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44630402, g: 0.49610496, b: 0.57464945, a: 1}
+  m_IndirectSpecularColor: {r: 0.44630373, g: 0.49610466, b: 0.57464886, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -421,6 +421,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: KoiFish_anim_updated
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7e9af0f867d9ed94fa36b972f4780dbf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7e9af0f867d9ed94fa36b972f4780dbf,
+        type: 3}
+      propertyPath: m_TagString
+      value: fish
+      objectReference: {fileID: 0}
+    - target: {fileID: -243320773602546439, guid: 7e9af0f867d9ed94fa36b972f4780dbf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -9154024806569375583, guid: 7e9af0f867d9ed94fa36b972f4780dbf,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -461,6 +476,16 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 5d66b8e11737a154b8cfc123c7546aec, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 7e9af0f867d9ed94fa36b972f4780dbf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 7e9af0f867d9ed94fa36b972f4780dbf,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -5588349104217170429, guid: 7e9af0f867d9ed94fa36b972f4780dbf,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -479,17 +504,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 7e9af0f867d9ed94fa36b972f4780dbf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.6313434
+      value: -4.64
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7e9af0f867d9ed94fa36b972f4780dbf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.013
+      value: -2.9
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7e9af0f867d9ed94fa36b972f4780dbf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.3866065
+      value: 2.39
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7e9af0f867d9ed94fa36b972f4780dbf,
         type: 3}
@@ -2627,12 +2652,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1854124285}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 704db37165c695f49804b48b25b4b6a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1933137318}
   walkingDistance: 3
   stoppingDistance: 1.75
   smoothTime: 2.5
@@ -2649,13 +2674,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c77aa1c557370640862b3967d6b066c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishAgent: {fileID: 0}
+  fishAgent: {fileID: 1854124288}
   AIState: 0
   wayPoints: []
   moveSpeed: 1.5
-  m_collider: {fileID: 0}
+  m_collider: {fileID: 1854124289}
   waypoint: {x: 0, y: 0, z: 0}
-  RB: {fileID: 0}
+  RB: {fileID: 1854124290}
   slowdownSpeed: 0.1
   hasInteracted: 0
 --- !u!195 &1854124288
