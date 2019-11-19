@@ -13,6 +13,7 @@ public class FishAI : MonoBehaviour
     }
 
     public fishState AIState;
+    
     private bool active = true;
 
     // Variables for movement
@@ -35,6 +36,7 @@ public class FishAI : MonoBehaviour
 
     public Rigidbody RB;
 
+    // Testing
     public float slowdownSpeed = 0.1f;
 
     public bool hasInteracted;
@@ -55,9 +57,12 @@ public class FishAI : MonoBehaviour
 
         AIState = FishAI.fishState.MOVE;
 
+
         playerCapsule = GetComponent<MoveToPlayer>();
 
         RB = GetComponent<Rigidbody>();
+
+        GetNewWayPoint();
 
         StartCoroutine("FSM");
 	}
@@ -71,7 +76,12 @@ public class FishAI : MonoBehaviour
                 case fishState.MOVE:
                     Move();
                     break;
+
+                /*case fishState.STOP:
+                    //Stop();
+                    break;*/
             }
+
             yield return null;
         }
     }
@@ -82,12 +92,13 @@ public class FishAI : MonoBehaviour
         {
             //make sure we rotate the fish to face it's waypoint
             //RotateFish(waypoint, moveSpeed);
-            if (hasInteracted == true)
+            /*if (hasInteracted == true)
             {
-                wayPointInd = Random.Range(0, wayPoints.Length);
-                moveSpeed *= 200;
-                hasInteracted = false;
-            }
+                //wayPointInd = Random.Range(0, wayPoints.Length);
+                //moveSpeed *= 200;
+                //RB.velocity = Vector3.zero;
+                //hasInteracted = false;
+            }*/
             fishAgent.speed = moveSpeed;
             if (Vector3.Distance(this.transform.position, wayPoints[wayPointInd].transform.position) >= 2)
             {
@@ -99,24 +110,44 @@ public class FishAI : MonoBehaviour
             }
         }    
         
-        if(playerCapsule.playerInteract == true)
+        /*if(playerCapsule.playerInteract == true)
         {
-            moveSpeed *= slowdownSpeed;
-            hasInteracted = true;
-        }
+            //moveSpeed *= slowdownSpeed;
+            //RB.velocity = Vector3.zero;
+            //hasInteracted = true;
+        }*/
     }
-    
-	
+
+
+    void GetNewWayPoint()
+    {
+        wayPointInd = Random.Range(0, wayPoints.Length);
+        moveSpeed *= slowdownSpeed;
+
+        hasInteracted = false;
+        Debug.Log("Has not Stopped");
+    }
+
 	// Update is called once per frame
 	void Update ()
     {
         CollidedFish();
+
+        if (playerCapsule.playerInteract == true)
+        {
+            moveSpeed *= 100;
+            RB.velocity = Vector3.zero;
+            hasInteracted = true;
+            Debug.Log("Has stopped");
+            fishAgent.speed = moveSpeed;
+        }  
     }
 
     void CollidedFish()
     {
 
         RaycastHit hit;
+        GetNewWayPoint();
         if (Physics.Raycast(transform.position, transform.forward, out hit, transform.localScale.z))
         {
             //if collider has hit a waypoint or registers itself ignore raycast hit
