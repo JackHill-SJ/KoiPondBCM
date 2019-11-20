@@ -37,9 +37,9 @@ public class FishAI : MonoBehaviour
     public Rigidbody RB;
 
     // Testing
-    public float slowdownSpeed = 0.1f;
+    //public float slowdownSpeed = 0.1f;
 
-    public bool hasInteracted;
+    //public bool hasInteracted;
 
 
     // Use this for initialization
@@ -62,7 +62,7 @@ public class FishAI : MonoBehaviour
 
         RB = GetComponent<Rigidbody>();
 
-        GetNewWayPoint();
+        //GetNewWayPoint();
 
         StartCoroutine("FSM");
 	}
@@ -85,6 +85,7 @@ public class FishAI : MonoBehaviour
             yield return null;
         }
     }
+
 
     void Move()
     {
@@ -119,17 +120,17 @@ public class FishAI : MonoBehaviour
     }
 
 
-    void GetNewWayPoint()
+    /*void GetNewWayPoint()
     {
         wayPointInd = Random.Range(0, wayPoints.Length);
         moveSpeed *= slowdownSpeed;
 
         hasInteracted = false;
         Debug.Log("Has not Stopped");
-    }
+    }*/
 
 	// Update is called once per frame
-	void Update ()
+	/*void Update ()
     {
         CollidedFish();
 
@@ -141,13 +142,13 @@ public class FishAI : MonoBehaviour
             Debug.Log("Has stopped");
             fishAgent.speed = moveSpeed;
         }  
-    }
+    }*/
 
     void CollidedFish()
     {
 
         RaycastHit hit;
-        GetNewWayPoint();
+        //GetNewWayPoint();
         if (Physics.Raycast(transform.position, transform.forward, out hit, transform.localScale.z))
         {
             //if collider has hit a waypoint or registers itself ignore raycast hit
