@@ -6,10 +6,12 @@ public class MoveToPlayer : MonoBehaviour
 {
     public Transform player;
     public float walkingDistance = 10.0f;
-    public float stoppingDistance = 5.0f;
-    public float smoothTime = 10.0f;
+    public float stoppingDistance = 2.0f;
+    public float smoothTime = 5.0f;
     private Vector3 smoothVelocity = Vector3.zero;
     private bool underPlayer;
+
+    //in the scene, try setting walking distance = 4  stopping distance = 1.75   and smooth time = 1.5
 
 
     public bool playerInteract;
@@ -21,29 +23,35 @@ public class MoveToPlayer : MonoBehaviour
 
     void Update()
     {
-
+        //get distance between fish and player first
         float distance = Vector3.Distance(transform.position, player.position);
 
-        if (distance < walkingDistance && underPlayer != true)
+        //if fish is in range of player [stopping distance] then underplayer is true and fish is still interacting with player
+        if (distance <= stoppingDistance)
+        {
+            underPlayer = true;
+            playerInteract = true;
+        }
+        //if fish is not within stopping distance, definitely not underplayer
+        else if (distance >= stoppingDistance)
+        {
+            underPlayer = false;
+        }
+
+
+        //now check for the greater distance, the walking distance
+        if (distance < walkingDistance && underPlayer != true)  //if less than walkingdistance but not underplayer, then keep moving toward player
         {
             playerInteract = true;
             transform.LookAt(player);
             transform.position = Vector3.SmoothDamp(transform.position, player.position, ref smoothVelocity, smoothTime);
         }
-        if (distance > walkingDistance && underPlayer != true)
+        else if (distance > walkingDistance)//&& underPlayer != true)
         {
             playerInteract = false;
         }
 
-        if (distance <= stoppingDistance)
-        {
-            underPlayer = true;
-        }
 
-        if (distance >= stoppingDistance)
-        {
-            underPlayer = false;
-        }
 
         if (transform.position.y > 90)
             transform.position = new Vector3(transform.position.x, 90, transform.position.z);

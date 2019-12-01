@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44630402, g: 0.49610496, b: 0.57464945, a: 1}
+  m_IndirectSpecularColor: {r: 0.44630373, g: 0.49610466, b: 0.57464886, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2756,9 +2756,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1933137318}
-  walkingDistance: 3
+  walkingDistance: 4
   stoppingDistance: 1.75
-  smoothTime: 2.5
+  smoothTime: 1.5
   playerInteract: 0
 --- !u!114 &1854124287
 MonoBehaviour:
@@ -2779,8 +2779,6 @@ MonoBehaviour:
   m_collider: {fileID: 1854124289}
   waypoint: {x: 0, y: 0, z: 0}
   RB: {fileID: 1854124290}
-  slowdownSpeed: 0.1
-  hasInteracted: 0
 --- !u!195 &1854124288
 NavMeshAgent:
   m_ObjectHideFlags: 0
