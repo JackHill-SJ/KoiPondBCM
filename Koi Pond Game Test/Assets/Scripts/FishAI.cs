@@ -13,7 +13,7 @@ public class FishAI : MonoBehaviour
     }
 
     public fishState AIState;
-    
+
     private bool active = true;
 
     // Variables for movement
@@ -43,7 +43,7 @@ public class FishAI : MonoBehaviour
 
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         fishAgent = GetComponent<NavMeshAgent>();
 
@@ -65,7 +65,7 @@ public class FishAI : MonoBehaviour
         //GetNewWayPoint();
 
         StartCoroutine("FSM");
-	}
+    }
 
     IEnumerator FSM()
     {
@@ -77,9 +77,9 @@ public class FishAI : MonoBehaviour
                     Move();
                     break;
 
-                /*case fishState.STOP:
-                    //Stop();
-                    break;*/
+                    /*case fishState.STOP:
+                        //Stop();
+                        break;*/
             }
 
             yield return null;
@@ -89,7 +89,7 @@ public class FishAI : MonoBehaviour
 
     void Move()
     {
-        if(playerCapsule.playerInteract == false)
+        if (playerCapsule.playerInteract == false)
         {
             //make sure we rotate the fish to face it's waypoint
             //RotateFish(waypoint, moveSpeed);
@@ -100,6 +100,8 @@ public class FishAI : MonoBehaviour
                 //RB.velocity = Vector3.zero;
                 //hasInteracted = false;
             }*/
+            fishAgent.isStopped = false;  //ulm
+
             fishAgent.speed = moveSpeed;
             if (Vector3.Distance(this.transform.position, wayPoints[wayPointInd].transform.position) >= 2)
             {
@@ -109,8 +111,12 @@ public class FishAI : MonoBehaviour
             {
                 wayPointInd = Random.Range(0, wayPoints.Length);
             }
-        }    
-        
+        }
+        else
+        {
+            fishAgent.isStopped = true;   //ulm
+        }
+
         /*if(playerCapsule.playerInteract == true)
         {
             //moveSpeed *= slowdownSpeed;
@@ -129,8 +135,8 @@ public class FishAI : MonoBehaviour
         Debug.Log("Has not Stopped");
     }*/
 
-	// Update is called once per frame
-	/*void Update ()
+    // Update is called once per frame
+    /*void Update ()
     {
         CollidedFish();
 

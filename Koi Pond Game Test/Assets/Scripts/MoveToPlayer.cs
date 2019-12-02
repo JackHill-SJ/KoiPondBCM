@@ -5,9 +5,9 @@ using UnityEngine;
 public class MoveToPlayer : MonoBehaviour
 {
     public Transform player;
-    public float walkingDistance = 10.0f;
-    public float stoppingDistance = 2.0f;
-    public float smoothTime = 5.0f;
+    public float walkingDistance = 4.0f;
+    public float stoppingDistance = 1.75f;
+    public float smoothTime = 1.5f;
     private Vector3 smoothVelocity = Vector3.zero;
     private bool underPlayer;
 
@@ -26,14 +26,23 @@ public class MoveToPlayer : MonoBehaviour
         //get distance between fish and player first
         float distance = Vector3.Distance(transform.position, player.position);
 
+        if (distance < walkingDistance)
+        {
+            playerInteract = true;
+        }
+        else
+        {
+            playerInteract = false;
+        }
+
+
         //if fish is in range of player [stopping distance] then underplayer is true and fish is still interacting with player
         if (distance <= stoppingDistance)
         {
             underPlayer = true;
-            playerInteract = true;
         }
         //if fish is not within stopping distance, definitely not underplayer
-        else if (distance >= stoppingDistance)
+        else //if (distance > stoppingDistance)
         {
             underPlayer = false;
         }
@@ -42,15 +51,15 @@ public class MoveToPlayer : MonoBehaviour
         //now check for the greater distance, the walking distance
         if (distance < walkingDistance && underPlayer != true)  //if less than walkingdistance but not underplayer, then keep moving toward player
         {
-            playerInteract = true;
             transform.LookAt(player);
-            transform.position = Vector3.SmoothDamp(transform.position, player.position, ref smoothVelocity, smoothTime);
-        }
-        else if (distance > walkingDistance)//&& underPlayer != true)
-        {
-            playerInteract = false;
-        }
 
+
+            //Vector3 targetPosition = player.TransformPoint(new Vector3(-1, 0, -1));
+            //transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref smoothVelocity, smoothTime);
+            //OR
+            transform.position = Vector3.SmoothDamp(transform.position, player.position, ref smoothVelocity, smoothTime);
+
+        }
 
 
         if (transform.position.y > 90)
