@@ -36,11 +36,6 @@ public class FishAI : MonoBehaviour
 
     public Rigidbody RB;
 
-    // Testing
-    //public float slowdownSpeed = 0.1f;
-
-    //public bool hasInteracted;
-
 
     // Use this for initialization
     void Start()
@@ -62,7 +57,6 @@ public class FishAI : MonoBehaviour
 
         RB = GetComponent<Rigidbody>();
 
-        //GetNewWayPoint();
 
         StartCoroutine("FSM");
     }
@@ -76,10 +70,7 @@ public class FishAI : MonoBehaviour
                 case fishState.MOVE:
                     Move();
                     break;
-
-                    /*case fishState.STOP:
-                        //Stop();
-                        break;*/
+               
             }
 
             yield return null;
@@ -93,13 +84,7 @@ public class FishAI : MonoBehaviour
         {
             //make sure we rotate the fish to face it's waypoint
             //RotateFish(waypoint, moveSpeed);
-            /*if (hasInteracted == true)
-            {
-                //wayPointInd = Random.Range(0, wayPoints.Length);
-                //moveSpeed *= 200;
-                //RB.velocity = Vector3.zero;
-                //hasInteracted = false;
-            }*/
+            
             fishAgent.isStopped = false;  //ulm
 
             fishAgent.speed = moveSpeed;
@@ -117,38 +102,9 @@ public class FishAI : MonoBehaviour
             fishAgent.isStopped = true;   //ulm
         }
 
-        /*if(playerCapsule.playerInteract == true)
-        {
-            //moveSpeed *= slowdownSpeed;
-            //RB.velocity = Vector3.zero;
-            //hasInteracted = true;
-        }*/
     }
 
 
-    /*void GetNewWayPoint()
-    {
-        wayPointInd = Random.Range(0, wayPoints.Length);
-        moveSpeed *= slowdownSpeed;
-
-        hasInteracted = false;
-        Debug.Log("Has not Stopped");
-    }*/
-
-    // Update is called once per frame
-    /*void Update ()
-    {
-        CollidedFish();
-
-        if (playerCapsule.playerInteract == true)
-        {
-            moveSpeed *= 100;
-            RB.velocity = Vector3.zero;
-            hasInteracted = true;
-            Debug.Log("Has stopped");
-            fishAgent.speed = moveSpeed;
-        }  
-    }*/
 
     void CollidedFish()
     {
