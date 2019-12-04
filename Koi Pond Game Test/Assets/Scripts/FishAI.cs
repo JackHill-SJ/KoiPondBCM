@@ -123,6 +123,7 @@ public class FishAI : MonoBehaviour
             if (randomNum < 40)
             {
                 m_hasTarget = false;
+                transform.Rotate(Vector3.left, 45 * Time.deltaTime * moveSpeed);
             }
         }
     }
