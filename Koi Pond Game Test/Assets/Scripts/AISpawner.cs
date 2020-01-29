@@ -14,8 +14,8 @@ public class AIObjects
     public int spawnRate { get { return m_spawnRate; } }
     public int spawnAmount { get { return m_maxSpawnAmount; } }
     public bool randomizeStats { get { return m_randomizeStats; } }
-    public bool enableSpawner { get { return m_enableSpawner; } }
-    
+    public bool enableSpawner { get { return m_enableSpawner; } } 
+
 
     // serialize private variables
     [Header("AI Group Stats")]
@@ -67,9 +67,6 @@ public class AIObjects
 
 public class AISpawner : MonoBehaviour
 {
-    // using list because we don't know the size of it, array wouold need to set size first
-    //public List<Transform> Waypoints = new List<Transform>();
-
     public float spawnTimer { get { return m_SpawnTimer; } } // global value for how often we run the spawner
     public Vector3 spawnArea { get { return m_SpawnArea; } }
 
@@ -87,26 +84,18 @@ public class AISpawner : MonoBehaviour
     [SerializeField]
     private Vector3 m_SpawnArea = new Vector3(20f, 10, 20f);
 
-
-
     // create array from new class
     [Header ("AI Groups Settings")]
     public AIObjects[] AIObject = new AIObjects[5];
 
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
         RandomizeGroups();
         CreateAIGroups();
         InvokeRepeating("SpawnFish", 0.3f, spawnTimer);
     }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 
     void SpawnFish()
     {
@@ -132,9 +121,6 @@ public class AISpawner : MonoBehaviour
 
                         //put spawned fish as child of group
                         tempSpawn.transform.parent = tempGroup.transform;
-
-                        //Add the AIMove script and class to the new Fish
-                        //tempSpawn.AddComponent<AIMove>();
                     }
                 }
             }
@@ -153,14 +139,6 @@ public class AISpawner : MonoBehaviour
         randomPosition = transform.TransformPoint(randomPosition * .5f);
         return randomPosition;
     }
-
-    //public method for getting a Random Waypoint
-    /*public Vector3 RandomWaypoint()
-    {
-        int randomWP = Random.Range(0, (Waypoints.Count - 1));
-        Vector3 randomWaypoint = Waypoints[randomWP].transform.position;
-        return randomWaypoint;
-    }*/
 
     // Method for putting random values in the AI Group settings
     void RandomizeGroups()

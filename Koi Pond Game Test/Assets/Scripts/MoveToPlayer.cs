@@ -29,7 +29,6 @@ public class MoveToPlayer : MonoBehaviour
         if (distance < walkingDistance)
         {
             playerInteract = true;
-            //Debug.Log("Turn to face Player");
         }
         else
         {
@@ -43,7 +42,7 @@ public class MoveToPlayer : MonoBehaviour
             underPlayer = true;
         }
         //if fish is not within stopping distance, definitely not underplayer
-        else //if (distance > stoppingDistance)
+        else
         {
             underPlayer = false;
         }
@@ -54,10 +53,6 @@ public class MoveToPlayer : MonoBehaviour
         {
             transform.LookAt(player);
 
-            //Debug.Log("See Player");
-            //Vector3 targetPosition = player.TransformPoint(new Vector3(-1, 0, -1));
-            //transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref smoothVelocity, smoothTime);
-            //OR
             transform.position = Vector3.SmoothDamp(transform.position, player.position, ref smoothVelocity, smoothTime);
 
         }

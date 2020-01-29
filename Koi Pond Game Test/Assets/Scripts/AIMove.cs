@@ -26,8 +26,6 @@ public class AIMove : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        //get the AISpawner from it's parent
-        //m_AIManager = transform.parent.GetComponentInParent<AISpawner>();
         m_Animator = GetComponent<Animator>();
 
         SetUpFish();
@@ -53,7 +51,6 @@ public class AIMove : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        //if we have not found a way point to move to
         //if we found a waypoint we need to move there
         if (m_hasTarget)
         {
@@ -68,17 +65,7 @@ public class AIMove : MonoBehaviour
             //move the fish in a straight line toward the waypoint
             transform.position = Vector3.MoveTowards(transform.position, m_wayPoint, m_speed * Time.deltaTime);
             Debug.Log("Found Target");
-
-            //Check if collided - if yes then lose the target and look for a new waypoint
-            //CollidedFish();
-            
         }
-
-        //if fish reaches waypoint reset target
-        /*if(transform.position == m_wayPoint)
-        {
-            m_hasTarget = false;
-        }*/
 	}
 
      void OnCollisionEnter(Collision collision)
@@ -90,69 +77,6 @@ public class AIMove : MonoBehaviour
             m_wayPoint = GameObject.FindGameObjectWithTag("pond").GetComponent<AISpawner>().fishWayPoints[x].transform.position;
         }
     }
-
-    //method for changing direction if a fish collides with something
-    /*void CollidedFish()
-    {
-        
-        RaycastHit hit;
-        if(Physics.Raycast(transform.position, transform.forward, out hit, transform.localScale.z))
-        {
-            //if collider has hit a waypoint or registers itself ignore raycast hit
-            if(hit.collider == m_collider | hit.collider.tag == "waypoint")
-            {
-                return;
-            }
-            //otherwise have a random chance that fish will change direction
-            int randomNum = Random.Range(1, 100);
-            if(randomNum < 40)
-            {
-                m_hasTarget = false;
-            }
-
-            //Debug just to show that it works
-            Debug.Log(hit.collider.transform.parent.name + " " + hit.collider.transform.parent.position);
-        }
-    }*/
-
-    //Get the waypoint
-    /*Vector3 GetWaypoint(bool isRandom)
-    {
-        //if isRandom is true then get a random position location
-        if (isRandom)
-        {
-            return m_AIManager.RandomPosition();
-        }
-        //otherwise get a random waypoint from the list of waypoint gameObjects
-        else
-        {
-            return m_AIManager.RandomWaypoint();
-        }
-    }*/
-
-    /*bool CanFindTarget(float start = 1f, float end = 7f)
-    {
-        m_wayPoint = m_AIManager.RandomWaypoint();
-        
-        //make sure we don't set the same waypoint twice
-        if(m_lastWaypoint == m_wayPoint)
-        {
-            //get a new waypoint
-            m_wayPoint = GetWaypoint(true);
-            return false;
-        }
-        else
-        {
-            //set the new waypoint as the last waypoint
-            m_lastWaypoint = m_wayPoint;
-
-            //get random speed for movement and animation
-            m_speed = Random.Range(start, end);
-            m_Animator.speed = m_speed;
-            //set bool to true to say we found a WP
-            return true;
-        }
-    }*/
 
     //Rotate the Fish to face a new waypoint
     void RotateFish(Vector3 waypoint, float currentSpeed)

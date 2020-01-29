@@ -77,14 +77,10 @@ public class FishAI : MonoBehaviour
         }
     }
 
-
     void Move()
     {
         if (playerCapsule.playerInteract == false)
-        {
-            //make sure we rotate the fish to face it's waypoint
-            //RotateFish(waypoint, moveSpeed);
-            
+        {   
             fishAgent.isStopped = false;  //ulm
 
             fishAgent.speed = moveSpeed;
@@ -104,13 +100,10 @@ public class FishAI : MonoBehaviour
 
     }
 
-
-
     void CollidedFish()
     {
 
         RaycastHit hit;
-        //GetNewWayPoint();
         if (Physics.Raycast(transform.position, transform.forward, out hit, transform.localScale.z))
         {
             //if collider has hit a waypoint or registers itself ignore raycast hit
@@ -127,14 +120,4 @@ public class FishAI : MonoBehaviour
             }
         }
     }
-
-    /*void RotateFish(Vector3 waypoint, float currentSpeed)
-    {
-        //get random speed for the turn
-        float turnSpeed = currentSpeed * Random.Range(1f, 3f);
-
-        //get new direction to look at for target
-        Vector3 LookAt = waypoint - this.transform.position;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(LookAt), turnSpeed * Time.deltaTime);
-    }*/
 }
