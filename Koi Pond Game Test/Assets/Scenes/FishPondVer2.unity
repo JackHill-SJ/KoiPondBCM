@@ -3366,6 +3366,7 @@ MonoBehaviour:
   walkingDistance: 4
   stoppingDistance: 1.75
   smoothTime: 1.5
+  turnSpeed: 0.001
   playerInteract: 0
 --- !u!137 &1661991787
 SkinnedMeshRenderer:
@@ -3469,6 +3470,7 @@ MonoBehaviour:
   walkingDistance: 4
   stoppingDistance: 1.75
   smoothTime: 1.5
+  turnSpeed: 0.001
   playerInteract: 0
 --- !u!114 &1854124287
 MonoBehaviour:
@@ -4747,6 +4749,7 @@ MonoBehaviour:
   walkingDistance: 4
   stoppingDistance: 1.75
   smoothTime: 1.5
+  turnSpeed: 0.001
   playerInteract: 0
 --- !u!137 &1929772760
 SkinnedMeshRenderer:

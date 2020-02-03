@@ -8,8 +8,12 @@ public class MoveToPlayer : MonoBehaviour
     public float walkingDistance = 4.0f;
     public float stoppingDistance = 1.75f;
     public float smoothTime = 1.5f;
+    public float turnSpeed = 20.0f;
     private Vector3 smoothVelocity = Vector3.zero;
     private bool underPlayer;
+    private Vector3 relativePosition;
+    private Quaternion targetRotation;
+
 
     //in the scene, try setting walking distance = 4  stopping distance = 1.75   and smooth time = 1.5
 
@@ -51,8 +55,12 @@ public class MoveToPlayer : MonoBehaviour
         //now check for the greater distance, the walking distance
         if (distance < walkingDistance && underPlayer != true)  //if less than walkingdistance but not underplayer, then keep moving toward player
         {
-            transform.LookAt(player);
+            // Checks for the relative position between the target(player) and Koi fish, then sets the targetRotation to the relative position found.
+            relativePosition = player.position - transform.position;
+            targetRotation = Quaternion.LookRotation(relativePosition);
 
+            //Quaternion.Lerp is used to create smooth rotation for the fish when they notice the player. Increase the number being multiplyed by turnSpeed to increase turn speed.
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 200 * turnSpeed);
             transform.position = Vector3.SmoothDamp(transform.position, player.position, ref smoothVelocity, smoothTime);
 
         }
