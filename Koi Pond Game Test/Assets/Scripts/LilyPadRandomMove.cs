@@ -2,10 +2,9 @@
 using System.Collections;
 
 // Makes objects float left, right, up & down while spinning.
-public class LilyPadBob : MonoBehaviour
+public class LilyPadRandomMove : MonoBehaviour
 {
     // User Inputs
-    public float degreesPerSecond = 15.0f; //Speed of spin
     public float speed;  // Speed of sway
     private Vector3 startingpos; //Starting position
     private Vector3 finalpos; //Final position
@@ -16,10 +15,10 @@ public class LilyPadBob : MonoBehaviour
     void Start()
     {
         startingpos = transform.position;
-        setDeltas();
+        SetDeltas();
     }
 
-    public void setDeltas()
+    public void SetDeltas()
     {
         float deltaX = Random.Range(-0.5f, 0.5f);
         float deltaZ = Random.Range(-0.5f, 0.5f);
@@ -30,8 +29,6 @@ public class LilyPadBob : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Spin object around Y-Axis
-        transform.Rotate(new Vector3(0f, Time.deltaTime * degreesPerSecond, 0f), Space.World);
         //Move object back and forth
         transform.position = Vector3.Lerp(startingpos, finalpos, Mathf.PingPong(Time.time * speed, 1.0f));
         transform.Rotate(Vector3.up * 10f * Time.deltaTime);

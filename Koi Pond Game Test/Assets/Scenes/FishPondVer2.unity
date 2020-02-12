@@ -2030,11 +2030,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 823252262}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0d2d09a46ee7034c8a46221fab1f558, type: 3}
+  m_Script: {fileID: 11500000, guid: 14c7704b9e675d3449d7ea07a120cdbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degreesPerSecond: 3
-  speed: 0.4
 --- !u!1 &871995005 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 59092af6c633ca24eb3ae244f2b4bee0,
@@ -2050,11 +2048,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 871995005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0d2d09a46ee7034c8a46221fab1f558, type: 3}
+  m_Script: {fileID: 11500000, guid: 14c7704b9e675d3449d7ea07a120cdbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degreesPerSecond: 3
-  speed: 0.4
 --- !u!1 &883693501
 GameObject:
   m_ObjectHideFlags: 0
@@ -2532,11 +2528,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1021560407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0d2d09a46ee7034c8a46221fab1f558, type: 3}
+  m_Script: {fileID: 11500000, guid: 14c7704b9e675d3449d7ea07a120cdbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degreesPerSecond: 4
-  speed: 0.4
 --- !u!1001 &1047082859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3153,11 +3147,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1390551311}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0d2d09a46ee7034c8a46221fab1f558, type: 3}
+  m_Script: {fileID: 11500000, guid: 14c7704b9e675d3449d7ea07a120cdbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degreesPerSecond: 3
-  speed: 0.4
 --- !u!1 &1430555681 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 59092af6c633ca24eb3ae244f2b4bee0,
@@ -3173,11 +3165,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1430555681}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0d2d09a46ee7034c8a46221fab1f558, type: 3}
+  m_Script: {fileID: 11500000, guid: 14c7704b9e675d3449d7ea07a120cdbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degreesPerSecond: 4
-  speed: 0.4
 --- !u!1 &1475648811
 GameObject:
   m_ObjectHideFlags: 0

@@ -59,6 +59,8 @@ public class FishAI : MonoBehaviour
 
 
         StartCoroutine("FSM");
+
+        moveSpeed = Random.Range(0.8f, 1.2f);
     }
 
     IEnumerator FSM()
