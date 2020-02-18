@@ -1036,13 +1036,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1460607744a5dd742bef46309fb64db1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishAgent: {fileID: 216312378}
+  fishAgent: {fileID: 0}
   AIState: 0
   wayPoints: []
-  moveSpeed: 1.5
-  m_collider: {fileID: 216312380}
+  moveSpeed: 1
+  m_collider: {fileID: 0}
   waypoint: {x: 0, y: 0, z: 0}
-  RB: {fileID: 216312381}
+  RB: {fileID: 0}
 --- !u!64 &216312380
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1459,13 +1459,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1460607744a5dd742bef46309fb64db1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishAgent: {fileID: 582024676}
+  fishAgent: {fileID: 0}
   AIState: 0
   wayPoints: []
-  moveSpeed: 1.5
-  m_collider: {fileID: 582024679}
+  moveSpeed: 1
+  m_collider: {fileID: 0}
   waypoint: {x: 0, y: 0, z: 0}
-  RB: {fileID: 582024675}
+  RB: {fileID: 0}
 --- !u!54 &582024675
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1803,13 +1803,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c77aa1c557370640862b3967d6b066c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishAgent: {fileID: 769378170}
+  fishAgent: {fileID: 0}
   AIState: 0
   wayPoints: []
-  moveSpeed: 1.5
-  m_collider: {fileID: 769378172}
+  moveSpeed: 1
+  m_collider: {fileID: 0}
   waypoint: {x: 0, y: 0, z: 0}
-  RB: {fileID: 769378173}
+  RB: {fileID: 0}
 --- !u!195 &769378170
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2021,6 +2021,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c7704b9e675d3449d7ea07a120cdbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &823252266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823252262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2089e9fe9d3e0f4db9fdd63b0cbf8b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  fleeDistance: 2.5
+  turnSpeed: 20
+  smoothTime: 1.5
+  speed: 2
 --- !u!1 &871995005 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 59092af6c633ca24eb3ae244f2b4bee0,
@@ -2039,6 +2056,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c7704b9e675d3449d7ea07a120cdbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &871995007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871995005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2089e9fe9d3e0f4db9fdd63b0cbf8b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  fleeDistance: 2.5
+  turnSpeed: 20
+  smoothTime: 1.5
+  speed: 2
 --- !u!1 &883693501
 GameObject:
   m_ObjectHideFlags: 0
@@ -2519,6 +2553,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c7704b9e675d3449d7ea07a120cdbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1021560411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021560407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2089e9fe9d3e0f4db9fdd63b0cbf8b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  fleeDistance: 2.5
+  turnSpeed: 20
+  smoothTime: 1.5
+  speed: 2
 --- !u!1001 &1047082859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3140,6 +3191,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c7704b9e675d3449d7ea07a120cdbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1390551313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390551311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2089e9fe9d3e0f4db9fdd63b0cbf8b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  fleeDistance: 2.5
+  turnSpeed: 20
+  smoothTime: 1.5
+  speed: 2
 --- !u!1 &1430555681 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 59092af6c633ca24eb3ae244f2b4bee0,
@@ -3158,6 +3226,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c7704b9e675d3449d7ea07a120cdbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1430555683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430555681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2089e9fe9d3e0f4db9fdd63b0cbf8b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  fleeDistance: 2.5
+  turnSpeed: 20
+  smoothTime: 1.5
+  speed: 2
 --- !u!1 &1475648811
 GameObject:
   m_ObjectHideFlags: 0
@@ -3506,13 +3591,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c77aa1c557370640862b3967d6b066c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishAgent: {fileID: 1538853088}
+  fishAgent: {fileID: 0}
   AIState: 0
   wayPoints: []
-  moveSpeed: 1.5
-  m_collider: {fileID: 1538853092}
+  moveSpeed: 1
+  m_collider: {fileID: 0}
   waypoint: {x: 0, y: 0, z: 0}
-  RB: {fileID: 1538853093}
+  RB: {fileID: 0}
 --- !u!114 &1538853090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3992,13 +4077,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c77aa1c557370640862b3967d6b066c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishAgent: {fileID: 1661991784}
+  fishAgent: {fileID: 0}
   AIState: 0
   wayPoints: []
-  moveSpeed: 1.5
-  m_collider: {fileID: 1661991788}
+  moveSpeed: 1
+  m_collider: {fileID: 0}
   waypoint: {x: 0, y: 0, z: 0}
-  RB: {fileID: 1661991789}
+  RB: {fileID: 0}
 --- !u!114 &1661991786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4387,13 +4472,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c77aa1c557370640862b3967d6b066c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishAgent: {fileID: 1854124288}
+  fishAgent: {fileID: 0}
   AIState: 0
   wayPoints: []
-  moveSpeed: 1.5
-  m_collider: {fileID: 1854124289}
+  moveSpeed: 1
+  m_collider: {fileID: 0}
   waypoint: {x: 0, y: 0, z: 0}
-  RB: {fileID: 1854124290}
+  RB: {fileID: 0}
 --- !u!195 &1854124288
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4759,13 +4844,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1460607744a5dd742bef46309fb64db1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishAgent: {fileID: 1886077443}
+  fishAgent: {fileID: 0}
   AIState: 0
   wayPoints: []
-  moveSpeed: 1.5
-  m_collider: {fileID: 1886077445}
+  moveSpeed: 1
+  m_collider: {fileID: 0}
   waypoint: {x: 0, y: 0, z: 0}
-  RB: {fileID: 1886077446}
+  RB: {fileID: 0}
 --- !u!64 &1886077445
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5628,13 +5713,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c77aa1c557370640862b3967d6b066c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishAgent: {fileID: 1929772757}
+  fishAgent: {fileID: 0}
   AIState: 0
   wayPoints: []
-  moveSpeed: 1.5
-  m_collider: {fileID: 1929772761}
+  moveSpeed: 1
+  m_collider: {fileID: 0}
   waypoint: {x: 0, y: 0, z: 0}
-  RB: {fileID: 1929772762}
+  RB: {fileID: 0}
 --- !u!114 &1929772759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10694,7 +10779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85b470e2fbd28544ebfa89fb842cb773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1933137318}
+  player: {fileID: 0}
   fleeDistance: 4
   turnSpeed: 20
   smoothTime: 1.5
@@ -10717,7 +10802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85b470e2fbd28544ebfa89fb842cb773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1933137318}
+  player: {fileID: 0}
   fleeDistance: 4
   turnSpeed: 20
   smoothTime: 1.5
@@ -10740,7 +10825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85b470e2fbd28544ebfa89fb842cb773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1933137318}
+  player: {fileID: 0}
   fleeDistance: 4
   turnSpeed: 20
   smoothTime: 1.5
