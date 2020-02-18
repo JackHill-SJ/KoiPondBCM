@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class FishAI : MonoBehaviour
+public class KoiFishAI : MonoBehaviour
 {
     public NavMeshAgent fishAgent;
 
@@ -50,13 +50,11 @@ public class FishAI : MonoBehaviour
         wayPoints = GameObject.FindGameObjectsWithTag("waypoint");
         wayPointInd = Random.Range(0, wayPoints.Length);
 
-        AIState = FishAI.fishState.MOVE;
-
+        AIState = KoiFishAI.fishState.MOVE;
 
         playerCapsule = GetComponent<MoveToPlayer>();
 
         RB = GetComponent<Rigidbody>();
-
 
         StartCoroutine("FSM");
 
@@ -72,7 +70,6 @@ public class FishAI : MonoBehaviour
                 case fishState.MOVE:
                     Move();
                     break;
-               
             }
 
             yield return null;

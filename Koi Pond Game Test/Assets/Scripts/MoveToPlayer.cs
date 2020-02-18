@@ -36,8 +36,8 @@ public class MoveToPlayer : MonoBehaviour
         }
         else
         {
-            playerInteract = false;
-        }
+           playerInteract = false;
+       }
 
 
         //if fish is in range of player [stopping distance] then underplayer is true and fish is still interacting with player

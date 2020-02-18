@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class CarpAI : MonoBehaviour
+public class CatFishAI : MonoBehaviour
 {
     public NavMeshAgent fishAgent;
 
@@ -13,6 +13,7 @@ public class CarpAI : MonoBehaviour
     }
 
     public fishState AIState;
+
     private bool active = true;
 
     // Variables for movement
@@ -47,12 +48,14 @@ public class CarpAI : MonoBehaviour
         wayPoints = GameObject.FindGameObjectsWithTag("waypoint");
         wayPointInd = Random.Range(0, wayPoints.Length);
 
-        AIState = CarpAI.fishState.MOVE;
+        AIState = CatFishAI.fishState.MOVE;
 
         RB = GetComponent<Rigidbody>();
 
         StartCoroutine("FSM");
-	}
+
+        moveSpeed = Random.Range(0.8f, 1.2f);
+    }
 
     IEnumerator FSM()
     {
