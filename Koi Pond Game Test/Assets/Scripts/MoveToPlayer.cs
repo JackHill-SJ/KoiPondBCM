@@ -39,6 +39,17 @@ public class MoveToPlayer : MonoBehaviour
            playerInteract = false;
        }
 
+        //Stops Koifish from getting out of pond area.
+        if(transform.position.z >= 10)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, 10);
+        }
+
+        if(transform.position.z <= -4)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -4);
+        }
+
 
         //if fish is in range of player [stopping distance] then underplayer is true and fish is still interacting with player
         if (distance <= stoppingDistance)

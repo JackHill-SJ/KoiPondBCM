@@ -21,6 +21,18 @@ public class RunFromPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Stops catfish from going outside of pond area.
+        if (transform.position.z >= 10)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, 10);
+        }
+
+        if (transform.position.z <= -4)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -4);
+        }
+
+        //Block of code that has the Catfish run from the player upon their approach.
         float distance = Vector3.Distance(transform.position, player.position);
 
         if (distance < fleeDistance)
