@@ -40,12 +40,26 @@ public class RunFromPlayer : MonoBehaviour
             relativePosition = player.position - transform.position;
             targetRotation = Quaternion.LookRotation(-relativePosition);
 
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 100 * turnSpeed);
-            transform.position = Vector3.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+            StartCoroutine(RunAway());
         }
 
         if (transform.position.y > 90)
             transform.position = new Vector3(transform.position.x, 90, transform.position.z);
 
     }
+
+    IEnumerator RunAway()
+    {
+        float timePassed = 0;
+        while (timePassed < .5)
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 100 * turnSpeed);
+            transform.position = Vector3.MoveTowards(transform.position, player.position, -Time.deltaTime);
+            timePassed += Time.deltaTime;
+
+            yield return null;
+        }
+    }
 }
+
+
