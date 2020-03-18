@@ -54,7 +54,7 @@ public class RunFromPlayer : MonoBehaviour
         while (timePassed < .5)
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 100 * turnSpeed);
-            transform.position = Vector3.MoveTowards(transform.position, player.position, -Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, player.position, -Time.deltaTime * 0.5f);
             timePassed += Time.deltaTime;
 
             yield return null;
