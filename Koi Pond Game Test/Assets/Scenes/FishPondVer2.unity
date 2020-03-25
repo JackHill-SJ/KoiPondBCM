@@ -13886,7 +13886,7 @@ MonoBehaviour:
   fleeDistance: 4
   turnSpeed: 0.0001
   smoothTime: 1.5
-  speed: 5
+  speed: 0.3
 --- !u!1 &8296172667874910140 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 3e348bad27344c54c9ac71035bc71b45,
@@ -13909,7 +13909,7 @@ MonoBehaviour:
   fleeDistance: 4
   turnSpeed: 0.0001
   smoothTime: 1.5
-  speed: 5
+  speed: 0.3
 --- !u!1 &8296172668997858097 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 3e348bad27344c54c9ac71035bc71b45,
@@ -13932,4 +13932,4 @@ MonoBehaviour:
   fleeDistance: 4
   turnSpeed: 0.0001
   smoothTime: 1.5
-  speed: 5
+  speed: 0.3
