@@ -4665,8 +4665,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f8055bbf4e6f64299581683eccf3b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragonflyAnimator: {fileID: 0}
-  dragonfly: {fileID: 0}
+  dragonflyAnimator: {fileID: 1143746632}
+  dragonfly: {fileID: 1143746635}
 --- !u!82 &1143746635
 AudioSource:
   m_ObjectHideFlags: 0
