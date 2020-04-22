@@ -10,14 +10,12 @@ public class DragonflyRandomizer : MonoBehaviour
 
     void Start()
     {
-        dragonflyAnimator = GetComponent<Animator>();
-        AudioSource dragonfly = GetComponent<AudioSource>();
         RandomAnim();
     }
 
     void RandomAnim()
     {
-        currentAnim = Random.Range(1, 4);
+        currentAnim = Random.Range(1, 3);
         if (currentAnim == 1)
         {
             StartCoroutine(Anim1());
@@ -34,9 +32,11 @@ public class DragonflyRandomizer : MonoBehaviour
 
     IEnumerator Anim1()
     {
+
         dragonfly.Play(0);
         dragonflyAnimator.SetTrigger("Anim1");
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(15);
+        dragonflyAnimator.ResetTrigger("Anim1");
         dragonfly.Pause();
         yield return new WaitForSeconds(20);
         RandomAnim();
@@ -45,7 +45,8 @@ public class DragonflyRandomizer : MonoBehaviour
     {
         dragonfly.Play(0);
         dragonflyAnimator.SetTrigger("Anim2");
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(15);
+        dragonflyAnimator.ResetTrigger("Anim2");
         dragonfly.Pause();
         yield return new WaitForSeconds(20);
         RandomAnim();
@@ -54,7 +55,8 @@ public class DragonflyRandomizer : MonoBehaviour
     {
         dragonfly.Play(0);
         dragonflyAnimator.SetTrigger("Anim3");
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(15);
+        dragonflyAnimator.ResetTrigger("Anim3");
         dragonfly.Pause();
         yield return new WaitForSeconds(20);
         RandomAnim();
