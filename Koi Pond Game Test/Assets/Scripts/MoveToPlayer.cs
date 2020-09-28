@@ -76,7 +76,7 @@ public class MoveToPlayer : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
                 playerInteract = true;
                 // Checks for the relative position between the target(player) and Koi fish, then sets the targetRotation to the relative position found.
