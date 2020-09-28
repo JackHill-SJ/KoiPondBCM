@@ -92,11 +92,12 @@ public class KoiFishAI : MonoBehaviour
                 wayPointInd = Random.Range(0, wayPoints.Length);
             }
         }
-        else
-        {
-            fishAgent.isStopped = true;   //ulm
-        }
-
+        //
+        // else
+        //  {
+        //     fishAgent.isStopped = true;   //ulm
+        //  }
+        //
     }
 
     void CollidedFish()

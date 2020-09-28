@@ -52,19 +52,19 @@ public class MoveToPlayer : MonoBehaviour
 
 
         //if fish is in range of player [stopping distance] then underplayer is true and fish is still interacting with player
-        if (distance <= stoppingDistance)
-        {
-            underPlayer = true;
-        }
+        //if (distance <= stoppingDistance)
+        //{
+        //    underPlayer = true;
+        //}
         //if fish is not within stopping distance, definitely not underplayer
-        else
-        {
-            underPlayer = false;
-        }
+        //else
+        //{
+        //    underPlayer = false;
+        // }
 
 
         //now check for the greater distance, the walking distance
-        if (distance < walkingDistance && underPlayer != true)  //if less than walkingdistance but not underplayer, then keep moving toward player
+        if (distance < walkingDistance && Input.GetMouseButton(0))  //if less than walkingdistance but not underplayer, then keep moving toward player
         {
             // Checks for the relative position between the target(player) and Koi fish, then sets the targetRotation to the relative position found.
             relativePosition = player.position - transform.position;
@@ -75,19 +75,6 @@ public class MoveToPlayer : MonoBehaviour
             transform.position = Vector3.SmoothDamp(transform.position, player.position, ref smoothVelocity, smoothTime);
 
         }
-
-        if (Input.GetMouseButton(0))
-        {
-                playerInteract = true;
-                // Checks for the relative position between the target(player) and Koi fish, then sets the targetRotation to the relative position found.
-                relativePosition = player.position - transform.position;
-                targetRotation = Quaternion.LookRotation(relativePosition);
-
-                //Quaternion.Lerp is used to create smooth rotation for the fish when they notice the player. Increase the number being multiplyed by turnSpeed to increase turn speed.
-                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 200 * turnSpeed);
-                transform.position = Vector3.SmoothDamp(transform.position, player.position, ref smoothVelocity, smoothTime);
-        }
-
 
         if (transform.position.y > 90)
             transform.position = new Vector3(transform.position.x, 90, transform.position.z);
