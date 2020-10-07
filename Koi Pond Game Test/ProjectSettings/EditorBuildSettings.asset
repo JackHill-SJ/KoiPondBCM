@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FishPondVer2.unity
     guid: bcbc867f28153634f850554438442355
+  - enabled: 1
+    path: Assets/Scenes/FishPondVer3.unity
+    guid: 1744cf2aa5c3d55428edc32ee3dbffa7
   m_configObjects: {}
