@@ -6660,7 +6660,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663030459}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b3e8bfba64509a419fce012b6446220, type: 3}
   m_Name: 
@@ -9408,7 +9408,6 @@ GameObject:
   - component: {fileID: 3596957673328495463}
   - component: {fileID: 3700745009893752593}
   - component: {fileID: 3685700947497760867}
-  - component: {fileID: 3595928101688040982}
   m_Layer: 0
   m_Name: Ripple
   m_TagString: Untagged
@@ -9416,18 +9415,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3595928101688040982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3595928101688040981}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b3e8bfba64509a419fce012b6446220, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &3596957673328495463
 Transform:
   m_ObjectHideFlags: 0
@@ -14238,7 +14225,7 @@ PrefabInstance:
     - target: {fileID: 2207689367154932899, guid: bd6a857ff2e9b724189b0855f1838563,
         type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 1
+      value: 0.71
       objectReference: {fileID: 0}
     - target: {fileID: 2207689367154932899, guid: bd6a857ff2e9b724189b0855f1838563,
         type: 3}
@@ -14253,13 +14240,28 @@ PrefabInstance:
     - target: {fileID: 2207689367154932899, guid: bd6a857ff2e9b724189b0855f1838563,
         type: 3}
       propertyPath: ShapeModule.angle
-      value: 8
+      value: 4.47
       objectReference: {fileID: 0}
     - target: {fileID: 2207689367154932899, guid: bd6a857ff2e9b724189b0855f1838563,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2207689367154932899, guid: bd6a857ff2e9b724189b0855f1838563,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518728274181005564, guid: bd6a857ff2e9b724189b0855f1838563,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 88f32ac5939b71c498482f9bec5c5808, type: 2}
+    - target: {fileID: 8518728274181005564, guid: bd6a857ff2e9b724189b0855f1838563,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 88f32ac5939b71c498482f9bec5c5808, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6a857ff2e9b724189b0855f1838563, type: 3}
 --- !u!1 &8296172667848104712 stripped
