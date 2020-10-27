@@ -14,11 +14,12 @@ public class OnClickSetActive : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            particles.Play();
+            // This part of the if else statement is empty and honestly I don't know why.
         }
         else
         {
-            particles.Stop();
+            particles.Play();
         }
+
     }
 }
